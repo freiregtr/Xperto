@@ -94,6 +94,6 @@ public class ListarEquipos extends AppCompatActivity {
 
     // buscar un solo equipo
     private void mostrarUnEquipo(Equipo equipo){
-        Log.d("TAG", "nombre: " + equipo.getNombreEquipo() + " Pais: " + equipo.getPais() + "\n");
+        Log.d("TAG", "nombre: " + equipo.getNombreEquipo() + " Pais: " + equipo.getPais() + " id: " + equipo.getId() + "\n");
     }
 }

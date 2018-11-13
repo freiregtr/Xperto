@@ -25,10 +25,10 @@ public class Jugador {
     private String nombre;
 
     @ColumnInfo(name = "posicion")
-    private int Posicion;
+    private String posicion;
 
     @ColumnInfo(name = "equipoId")
-    private int profesorId;
+    private int equipoId;
 
     public int getId() {
         return id;
@@ -54,19 +54,19 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public int getPosicion() {
-        return Posicion;
+    public String getPosicion() {
+        return posicion;
     }
 
-    public void setPosicion(int posicion) {
-        Posicion = posicion;
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
     }
 
-    public int getProfesorId() {
-        return profesorId;
+    public int getEquipoId() {
+        return equipoId;
     }
 
-    public void setProfesorId(int profesorId) {
-        this.profesorId = profesorId;
+    public void setEquipoId(int equipoId) {
+        this.equipoId = equipoId;
     }
 }

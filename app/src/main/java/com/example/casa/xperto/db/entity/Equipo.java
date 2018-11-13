@@ -44,4 +44,9 @@ public class Equipo {
     public void setPais(String pais) {
         Pais = pais;
     }
+
+    @Override
+    public String toString() {
+        return id + " - " + nombreEquipo;
+    }
 }
