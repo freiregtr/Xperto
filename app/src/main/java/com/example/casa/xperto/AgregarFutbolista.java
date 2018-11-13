@@ -5,10 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
+
+import com.example.casa.xperto.db.entity.Equipo;
+
+import java.util.ArrayList;
 
 public class AgregarFutbolista extends AppCompatActivity {
 
     private Button volverMenu;
+    private Spinner comboEquipos;
+    ArrayList<String> listaEquipos;
+    ArrayList<Equipo> listaObjEquipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +33,9 @@ public class AgregarFutbolista extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), com.example.casa.xperto.MainActivity.class));
             }
         });
+
+        // Lógica spinner
+
+
     }
 }

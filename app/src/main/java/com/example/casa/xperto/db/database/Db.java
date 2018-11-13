@@ -42,7 +42,7 @@ public abstract class Db extends RoomDatabase {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
             database.execSQL("CREATE TABLE jugador (id INTEGER PRIMARY KEY NOT NULL, rut TEXT, " +
-                    "nombre TEXT, posicion INTEGER, equipoId INTEGER NOT NULL, foreign key (equipoId)" +
+                    "nombre TEXT, posicion TEXT, equipoId INTEGER NOT NULL, foreign key (equipoId)" +
                     " references equipo(id) ON DELETE CASCADE)");
         }
     };
