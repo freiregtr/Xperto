@@ -115,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerAgregarFut"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"

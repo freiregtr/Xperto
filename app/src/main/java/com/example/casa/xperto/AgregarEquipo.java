@@ -96,7 +96,7 @@ public class AgregarEquipo extends AppCompatActivity {
     private void mostrarEquipo(List<Equipo> equipos){
         for(Equipo equipo : equipos){
             // mostrar en consola
-            Log.d("TAG", "nombre: " + equipo.getNombreEquipo() + " Pais: " + equipo.getPais() + "\n");
+            Log.d("TAG", "nombre: " + equipo.getNombreEquipo() + " Pais: " + equipo.getPais() + " id: " + equipo.getId() + "\n");
         }
     }
 }
