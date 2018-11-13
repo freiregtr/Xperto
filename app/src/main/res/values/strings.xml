@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Xperto</string>
+    <string name="agregar_nuevo_equipo">Agregar nuevo equipo</string>
+    <string name="agregar_nuevo_futbolista">Agregar nuevo futbolista</string>
+</resources>
