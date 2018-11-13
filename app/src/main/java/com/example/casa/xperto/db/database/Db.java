@@ -18,18 +18,21 @@ import com.example.casa.xperto.db.entity.Jugador;
 public abstract class Db extends RoomDatabase {
 
     private static Db INSTANCIA;
+    // instancias de los DAO
     public abstract EquipoDAO equipoDao();
-    public abstract JugadorDAO equipoDAO();
+    public abstract JugadorDAO jugadorDAO();
 
     public static Db obtenerDb(Context context){
         if(INSTANCIA == null){
             INSTANCIA = Room.databaseBuilder(context.getApplicationContext(), Db.class, Constantes.NOMBRE_DATABASE)
                     .allowMainThreadQueries()
+                    .addMigrations(MIGRACION_I_2)
                     .build();
         }
         return INSTANCIA;
     }
 
+    // metodo para destruir instancia
     public static void destruirInstancia(){
         INSTANCIA = null;
     }
@@ -38,7 +41,9 @@ public abstract class Db extends RoomDatabase {
     static final Migration MIGRACION_I_2 = new Migration(1,2) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
-            database.execSQL("CREATE TABLE ");
+            database.execSQL("CREATE TABLE jugador (id INTEGER PRIMARY KEY NOT NULL, rut TEXT, " +
+                    "nombre TEXT, posicion INTEGER, equipoId INTEGER NOT NULL, foreign key (equipoId)" +
+                    " references equipo(id) ON DELETE CASCADE)");
         }
     };
 }

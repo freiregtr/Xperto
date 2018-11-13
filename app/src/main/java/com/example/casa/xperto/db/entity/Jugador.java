@@ -28,7 +28,7 @@ public class Jugador {
     private int Posicion;
 
     @ColumnInfo(name = "equipoId")
-    private int profesorId;
+    private int equipoId;
 
     public int getId() {
         return id;
@@ -62,11 +62,11 @@ public class Jugador {
         Posicion = posicion;
     }
 
-    public int getProfesorId() {
-        return profesorId;
+    public int getEquipoId() {
+        return equipoId;
     }
 
-    public void setProfesorId(int profesorId) {
-        this.profesorId = profesorId;
+    public void setEquipoId(int equipoId) {
+        this.equipoId = equipoId;
     }
 }
