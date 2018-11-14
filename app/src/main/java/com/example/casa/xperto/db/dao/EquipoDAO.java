@@ -12,6 +12,7 @@ import java.util.List;
 
 @Dao
 public interface EquipoDAO {
+    // query para insertar registros
     @Insert
     void insertarEquipo(Equipo equipo);
 

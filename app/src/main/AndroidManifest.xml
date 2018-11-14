@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".AgregarFutbolista" />
         <activity android:name=".AgregarEquipo" />
-        <activity android:name=".ListarEquipos"></activity>
+        <activity android:name=".ListarEquipos" />
+        <activity android:name=".ListarJugador" />
+        <activity android:name=".AgregarPartido"></activity>
     </application>
 
 </manifest>
