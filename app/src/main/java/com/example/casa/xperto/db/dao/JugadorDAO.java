@@ -12,11 +12,21 @@ import java.util.List;
 
 @Dao
 public interface JugadorDAO {
+    // query para insertar registros
     @Insert
     void insert(Jugador jugador);
 
+    // listar jugadores
+    @Query("SELECT * FROM jugador")
+    List<Jugador> listaJugadores();
+
+    // listar jugador por nombre
+    @Query("SELECT * FROM jugador WHERE nombre = :nombre")
+    Jugador encontrarJugadorPorNombre(String nombre);
+
+    // listar jugador por id
     @Query("SELECT * FROM jugador WHERE equipoId = :equipoId")
-    List<Jugador> buscarJugadorPorEquipo(int equipoId);
+    Jugador buscarJugadorPorEquipo(int equipoId);
 
     @Update
     void actualizarJugadorPorId(Jugador jugador);

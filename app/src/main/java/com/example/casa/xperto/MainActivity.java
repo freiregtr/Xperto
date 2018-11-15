@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     private Button AgregarEquipo;
     private Button AgregarFutbolista;
     private Button ListarEquipo;
+    private Button listarJugadores;
+    private Button agregarPartido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), com.example.casa.xperto.ListarEquipos.class));
+            }
+        });
+
+        listarJugadores = findViewById(R.id.btnListarJugadores);
+        listarJugadores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ListarJugador.class));
+            }
+        });
+
+        agregarPartido = findViewById(R.id.btnAgregarPartido);
+        agregarPartido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AgregarPartido.class));
             }
         });
     }

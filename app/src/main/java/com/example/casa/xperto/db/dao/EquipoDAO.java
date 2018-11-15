@@ -12,6 +12,7 @@ import java.util.List;
 
 @Dao
 public interface EquipoDAO {
+    // query para insertar registros
     @Insert
     void insertarEquipo(Equipo equipo);
 
@@ -20,7 +21,7 @@ public interface EquipoDAO {
     List<Equipo> listarEquipos();
 
     // Buscar equipos por id
-    @Query("SELECT * FROM equipo WHERE nombre LIKE :id")
+    @Query("SELECT * FROM equipo WHERE id = :id")
     Equipo encontrarEquipoPorId(int id);
 
     // Buscar equipos por nombre
