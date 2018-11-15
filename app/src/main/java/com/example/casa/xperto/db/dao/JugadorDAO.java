@@ -21,12 +21,12 @@ public interface JugadorDAO {
     List<Jugador> listaJugadores();
 
     // listar jugador por nombre
-    @Query("SELECT * FROM jugador WHERE nombre LIKE :nombre")
+    @Query("SELECT * FROM jugador WHERE nombre = :nombre")
     Jugador encontrarJugadorPorNombre(String nombre);
 
     // listar jugador por id
     @Query("SELECT * FROM jugador WHERE equipoId = :equipoId")
-    List<Jugador> buscarJugadorPorEquipo(int equipoId);
+    Jugador buscarJugadorPorEquipo(int equipoId);
 
     @Update
     void actualizarJugadorPorId(Jugador jugador);

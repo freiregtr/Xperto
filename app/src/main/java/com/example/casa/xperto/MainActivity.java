@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button AgregarFutbolista;
     private Button ListarEquipo;
     private Button listarJugadores;
+    private Button agregarPartido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ListarJugador.class));
+            }
+        });
+
+        agregarPartido = findViewById(R.id.btnAgregarPartido);
+        agregarPartido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AgregarPartido.class));
             }
         });
     }
