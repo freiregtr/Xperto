@@ -33,10 +33,10 @@ public class Partido {
     private int id;
 
     @ColumnInfo(name = "rival_1_fk")
-    private String rival_1_fk;
+    private int rival_1_fk;
 
     @ColumnInfo(name = "rival_2_fk")
-    private String rival_2_fk;
+    private int rival_2_fk;
 
     @ColumnInfo(name = "goles")
     private String goles;
@@ -58,19 +58,19 @@ public class Partido {
         this.id = id;
     }
 
-    public String getRival_1_fk() {
+    public int getRival_1_fk() {
         return rival_1_fk;
     }
 
-    public void setRival_1_fk(String rival_1_fk) {
+    public void setRival_1_fk(int rival_1_fk) {
         this.rival_1_fk = rival_1_fk;
     }
 
-    public String getRival_2_fk() {
+    public int getRival_2_fk() {
         return rival_2_fk;
     }
 
-    public void setRival_2_fk(String rival_2_fk) {
+    public void setRival_2_fk(int rival_2_fk) {
         this.rival_2_fk = rival_2_fk;
     }
 

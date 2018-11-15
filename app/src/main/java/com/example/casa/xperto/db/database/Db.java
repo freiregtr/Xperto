@@ -34,6 +34,7 @@ public abstract class Db extends RoomDatabase {
             INSTANCIA = Room.databaseBuilder(context.getApplicationContext(), Db.class, Constantes.NOMBRE_DATABASE)
                     .allowMainThreadQueries()
                     .addMigrations(MIGRACION_I_2)
+                    .addMigrations(MIGRACION_2_3)
                     .build();
         }
         return INSTANCIA;
@@ -44,16 +45,6 @@ public abstract class Db extends RoomDatabase {
         INSTANCIA = null;
     }
 
-    // migración de 2 a 3
-    static final Migration MIGRACION_2_3 = new Migration(2,3) {
-        @Override
-        public void migrate(@NonNull SupportSQLiteDatabase database) {
-            database.execSQL("CREATE TABLE partido (id INTEGER PRIMARY KEY NOT NULL, nombre TEXT, " +
-                    "goles TEXT, ganador TEXT, fecha TEXT, ganador DATE, clasificacion TEXT, rival_1_fk INTEGER NOT NULL, foreign key (rival_1_fk)" +
-                    " references equipo(id) ON DELETE CASCADE, foreign key (rival_2_fk) references (equipo)id ON DELETE CASCADE");
-        }
-    };
-
     // migración de 1 a 2
     static final Migration MIGRACION_I_2 = new Migration(1,2) {
         @Override
@@ -61,6 +52,16 @@ public abstract class Db extends RoomDatabase {
             database.execSQL("CREATE TABLE jugador (id INTEGER PRIMARY KEY NOT NULL, rut TEXT, " +
                     "nombre TEXT, posicion TEXT, equipoId INTEGER NOT NULL, foreign key (equipoId)" +
                     " references equipo(id) ON DELETE CASCADE)");
+        }
+    };
+
+    // migración de 2 a 3
+    static final Migration MIGRACION_2_3 = new Migration(2,3) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("CREATE TABLE partido (id INTEGER PRIMARY KEY NOT NULL, " +
+                    "goles TEXT, fecha INTEGER, ganador TEXT, clasificacion TEXT, rival_1_fk INTEGER NOT NULL, rival_2_fk INTEGER NOT NULL, foreign key (rival_1_fk)" +
+                    " references equipo(id) ON DELETE CASCADE, foreign key (rival_2_fk) references equipo(id) ON DELETE CASCADE)");
         }
     };
 }
